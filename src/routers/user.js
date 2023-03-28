@@ -98,7 +98,7 @@ router.delete('/users/me', auth, async (req, res) => {
     await User.findByIdAndRemove(req.user._id);
     await Task.deleteMany({ owner: req.user._id });
     console.log(req.user.email);
-    sendCancelationEmail(req.user.email, res.user.name);
+    // sendCancelationEmail(req.user.email, res.user.name);
     res.send(req.user);
   } catch (err) {
     res.status(500).send();

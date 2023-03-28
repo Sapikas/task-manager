@@ -1,10 +1,6 @@
-const express = require('express');
-require('./db/mongoose');
-const userRouter = require('./routers/user');
-const taskRouter = require('./routers/task');
-// const multer = require('multer');
+const app = require('./index');
 
-const app = express();
+// const multer = require('multer');
 const port = process.env.PORT || 3000;
 
 // app.use((req, res, next) => {
@@ -28,10 +24,6 @@ const port = process.env.PORT || 3000;
 // }, (error, req, res, next) => {
 //   res.status(400).send({ error: error.message });
 // });
-
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);

@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node src/app.js",
     "start:dev": "env-cmd --file ./config/dev.env nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "env-cmd --file ./config/test.env jest --watch --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +26,8 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.22"
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
